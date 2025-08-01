@@ -1,20 +1,17 @@
 /**
  * CONFIGURATION MANAGEMENT
- * Centralized config that can be extended as needed
+ * Loads from JSON with environment variable overrides
  */
+
+const defaultConfig = require('./default.json');
 
 const config = {
     server: {
-        port: process.env.PORT || 3000,
-        host: process.env.HOST || 'localhost',
-        protocol: process.env.PROTOCOL || 'http',
-        env: process.env.NODE_ENV || 'development'
+        port: process.env.PORT || defaultConfig.server.port,
+        host: process.env.HOST || defaultConfig.server.host,
+        protocol: process.env.PROTOCOL || defaultConfig.server.protocol,
+        env: process.env.NODE_ENV || defaultConfig.server.env
     }
-    
-    // Future config sections can be added here:
-    // database: { ... },
-    // services: { ... },
-    // security: { ... }
 };
 
 module.exports = config;
