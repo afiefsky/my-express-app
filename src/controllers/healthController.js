@@ -3,7 +3,7 @@
  * Health check logic that can become a separate service
  */
 
-const config = require('../config');
+const config = require('../config/config.json');
 
 const healthController = {
     // GET /health - Health check endpoint
