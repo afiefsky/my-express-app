@@ -6,17 +6,14 @@
 const express = require('express');
 const router = express.Router();
 
+// Import controllers
+const appController = require('../controllers/appController');
+
 // Import route modules
 const healthRoutes = require('./health');
 
-// Simple root route
-router.get('/', (req, res) => {
-    res.json({
-        message: 'Express API Server',
-        status: 'running',
-        timestamp: new Date().toISOString()
-    });
-});
+// Root route
+router.get('/', appController.getApiInfo);
 
 // Mount health routes
 router.use('/health', healthRoutes);
