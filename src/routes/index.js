@@ -6,16 +6,11 @@
 const express = require('express');
 const router = express.Router();
 
-// Import controllers
-const healthController = require('../controllers/healthController');
-
 // Import route modules
-const healthRoutes = require('./health');
+const apiRoutes = require('./api-routes');
 
-// Root route
-router.get('/', healthController.getApiInfo);
-
-// Mount health routes
-router.use('/health', healthRoutes);
+// Mount API routes at root level
+// This provides both / and /health endpoints
+router.use('/', apiRoutes);
 
 module.exports = router;

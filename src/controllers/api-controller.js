@@ -1,11 +1,11 @@
 /**
- * HEALTH CONTROLLER - System health and monitoring
- * Health check logic that can become a separate service
+ * API CONTROLLER - Core API endpoints
+ * Basic API information and system health monitoring
  */
 
 const config = require('../config/config.json');
 
-const healthController = {
+const apiController = {
     // GET / - Root endpoint with API information
     getApiInfo: (req, res) => {
         res.json({
@@ -33,4 +33,4 @@ const healthController = {
     }
 };
 
-module.exports = healthController;
+module.exports = apiController;
