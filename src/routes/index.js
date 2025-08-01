@@ -7,13 +7,13 @@ const express = require('express');
 const router = express.Router();
 
 // Import controllers
-const appController = require('../controllers/appController');
+const healthController = require('../controllers/healthController');
 
 // Import route modules
 const healthRoutes = require('./health');
 
 // Root route
-router.get('/', appController.getApiInfo);
+router.get('/', healthController.getApiInfo);
 
 // Mount health routes
 router.use('/health', healthRoutes);

@@ -6,6 +6,15 @@
 const config = require('../config/config.json');
 
 const healthController = {
+    // GET / - Root endpoint with API information
+    getApiInfo: (req, res) => {
+        res.json({
+            message: 'Express API Server',
+            status: 'running',
+            timestamp: new Date().toISOString()
+        });
+    },
+
     // GET /health - Health check endpoint
     getHealth: (req, res) => {
         res.json({
